@@ -1,4 +1,8 @@
 # Compiled class file
+
+#ignore the .idea file
+.idea
+/resources
 *.class
 
 # Log file
