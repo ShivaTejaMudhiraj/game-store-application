@@ -2,9 +2,8 @@ package com.shivateja.game_store_api.notification;
 
 
 import com.shivateja.game_store_api.common.BaseEntity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
+import com.shivateja.game_store_api.user.User;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,4 +23,8 @@ public class Notification extends BaseEntity {
     private NotificationLevel level;
     @Enumerated(EnumType.STRING)
     private NotificationStatus status;
+
+    @ManyToOne()
+    @JoinColumn(name="user_id")
+    private User user;
 }
